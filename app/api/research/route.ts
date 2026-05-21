@@ -1,8 +1,6 @@
 export async function POST(request: Request) {
   const body = await request.json();
-  
-  // Hardcoded temporarily for testing
-  const backendUrl = "https://research-agent-backend-olvv.onrender.com";
+  const backendUrl = process.env.NEXT_PUBLIC_API_URL || "https://research-agent-backend-olvv.onrender.com";
 
   try {
     const response = await fetch(`${backendUrl}/research`, {
